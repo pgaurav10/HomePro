@@ -162,8 +162,11 @@ class LoginViewController: UIViewController {
             return
         }
         
-        if email == "test@example.com" && password == "password123" {
-            showAlert(title: "Success", message: "Login successful!")
+        if email == "Test@example.com" && password == "password123" {
+            // Navigate to Profile Page
+            let profileVC = ProfileViewController()
+            profileVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(profileVC, animated: true)
         } else {
             showAlert(title: "Error", message: "Invalid email or password.")
         }
